@@ -1,0 +1,89 @@
+*{box-sizing: border-box;
+    margin:0;
+    padding:0;
+    }
+    
+    body{height:100vh;}
+    .wrapper { 
+        display:grid;
+        grid-template-columns: 15% 35% 35% 15%;
+        grid-template-areas: 
+    'header header header header '
+    'nav nav nav nav '
+    'leftone  main main rightone  '
+    'leftone  main main  rightone '
+    'leftone   main  main rightone'
+    ' footer footer footer footer  '
+    ;
+    
+    }
+    
+    @media (max-width:700px) {
+        .wrapper {display:grid;
+            grid-template-columns: auto;
+         grid-template-areas:
+         'header'
+         'nav'
+         'main'
+         'leftone'
+         'rightone' 
+         'footer';
+         }
+         ul{display:flex;
+           flex-direction: column;}
+        
+    }
+    
+    
+    
+    ul{display:flex;
+       list-style-type: none;
+       background-color:goldenrod;
+       }
+       li a {display:block;
+              text-decoration: none;
+              text-transform: uppercase;
+              color: black;
+              margin:10 15px;
+              padding: 5px 15px;
+              text-align: center;
+               }
+    li a:hover{background-color: beige;
+    }
+    .main-head {grid-area:header;
+        background-color: cadetblue;
+                height:150px;
+                text-align:center;
+                color:white;
+                padding:40px;
+                font-size:3em;
+    }
+    .main-nav {grid-area:nav;}
+    
+    .side {grid-area:leftone;
+        background-color: darkslateblue;
+        text-align: center;
+        height:500px;
+    }
+    .ads{grid-area:rightone;
+         background-color:darkslateblue;
+         height:500px;
+         text-align: center;
+       }
+    
+    .content{grid-area:main;
+        background-color:rgb(192, 192, 192);
+        padding:40px;
+       
+        height:500px;
+      
+    }
+    .main-footer {grid-area:footer;
+        background-color:goldenrod;;
+        height:100px;
+        text-align: center;
+        color:white;
+        padding:40px;
+        font-size:3em;
+    
+    }
