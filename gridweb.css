@@ -1,0 +1,82 @@
+*{box-sizing: border-box;}
+  
+    .wrapper {
+       height: 100vh;
+        display: grid;
+        grid-gap: 5px;
+        margin:0;
+        grid-template-columns: auto ;
+        grid-template-rows:200px 1fr 2fr 1fr 1fr 1fr;
+        grid-template-areas:' header' 'navbar' 'main''sidemenu''ads' 'footer';
+      } 
+
+.header{background-color: #8da9c4;
+        padding: 50px;
+        font-size: 3em;
+        text-align: center;
+        line-height: 90px;
+        grid-area: header;
+        
+        }
+
+ .navbar{background-color: #8d98a7;
+    padding: 10px 20px ;
+         display: flex;
+         
+         grid-area: navbar;
+        
+        }   
+ .navbar a{text-decoration: none;
+           text-transform: uppercase;
+            color:black;
+             display: block;
+              padding:25px 10px;
+              margin:10px;
+              font-weight: bold;
+              font-size: 1.3em;
+              background-color: #f2e9e4;
+              flex:1;
+              text-align: center;
+             }   
+    .navbar a:hover{ background-color: black;
+                     color:#f2e9e4;}          
+        
+   .main{background-color: #efd3d7;
+         min-height: 70vh;
+         text-align: center;
+        grid-area: main;}   
+         
+    aside{background-color: #8d98a7;
+          text-align: center;
+          }  
+
+     .sidemenu{grid-area: sidemenu;
+      border-bottom: 1px solid whitesmoke;}    
+    .ads{
+        grid-area: ads;}   
+
+    .footer{background-color: #f2e9e4;
+            text-align: center;
+            padding:30px;
+            grid-area: footer;}
+
+     
+            
+      @media (min-width:500px) {
+        .main{min-height: 100vh;}
+        .wrapper {
+           grid-template-columns: 1fr  1fr 1fr 1fr ;
+           grid-template-rows:200px 200px 2fr 1fr 1fr 1fr;
+           grid-template-areas:
+           'header header header header header header' 
+           'navbar  main main main main sidemenu'
+           'navbar  main main main main sidemenu'
+           'navbar main main main main ads'
+           'navbar main main main main ads'
+            'footer footer footer footer footer footer';
+         } 
+         .navbar{display: block;
+                padding:0}
+         
+                
+      }       
